@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <style>*{-webkit-box-sizing:border-box;box-sizing:border-box}body{font-size:calc(16px + .25vw);-webkit-font-feature-settings:"onum" 1;font-feature-settings:"onum" 1;letter-spacing:-.25px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#14171a;color:#d1d1d1;margin:0}@supports (-ms-ime-align:auto){body{-webkit-font-feature-settings:normal;font-feature-settings:normal}}/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{-webkit-box-sizing:border-box;box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}@-ms-viewport{width:device-width}.container{margin-right:auto;margin-left:auto}html.klondike-is-desktop .container{min-width:1300px!important}@media (min-width:768px){.container{width:100%}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}@media (min-width:1365px){.container{width:1300px}}@media (min-width:1500px){.container{width:1400px}}.row{margin-left:-15px;margin-right:-15px}.col-f,.col-s{position:relative;min-height:1px;padding-left:15px;padding-right:15px}html.klondike-is-desktop .col-f,html.klondike-is-desktop .col-s{float:left}html.klondike-is-desktop .col-f{width:75%}html.klondike-is-desktop .col-s{width:25%}@media (min-width:1365px){.col-f,.col-s{float:left}.col-f{width:75%}.col-s{width:25%}}.container:after,.container:before,.row:after,.row:before{content:" ";display:table}.container:after,.row:after{clear:both}</style>
+   
+    <title>Quick CPU - Анпаркинг ядер процессоры | Клондайк Программиста</title>
+    <meta name="description" content="Мы - пиратская бухта для разработчиков: годные программы для Windows, скрипты, шаблоны, графика, софт для хакера и многое другое ;)"/>
+    <meta name="keywords" content="программы,windows,лучшие программы,шаблоны,скрипты,софт,взлом,psd,базы данных,wordpress,раздачи,php,javascript,html,css,книги,программистам,новичкам" />
+    <meta name="robots" content="noodp"/>
+    <meta name="author" content="Priler">
+
+    <!--<meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://www.howdyho.net/" />
+    <meta property="og:site_name" content="Клондайк Программиста" />
+    <meta property="article:tag" content="" />
+    <meta property="article:section" content="Главная" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="" />-->
+
+    <!-- Verifications -->
+    <meta name="wot-verification" content="7535b2ad90a748ee7b70"/>
+    <meta name="yandex-verification" content="ae08b69cb6e01888" />
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+
+    <link rel="stylesheet" href="/media/css/main.min.css?patch=1">
+<link rel="stylesheet" href="/media/css/material.min.css?patch=2">
+<link rel="stylesheet" href="/media/css/download.min.css">
+
+<!-- Non blocking CSS -->
+<link rel="stylesheet" href="/media/assets/hint.css/hint.min.css" media="none" onload="if(media!='all')media='all'">
+<noscript><link rel="stylesheet" href="/media/assets/hint.css/hint.min.css"></noscript>
+
+<link rel="stylesheet" href="/media/css/chatbro-legacy.min.css" media="none" onload="if(media!='all')media='all'">
+<noscript><link rel="stylesheet" href="/media/css/chatbro-legacy.min.css"></noscript>
+
+<link rel="stylesheet" href="/media/assets/owl/assets/owl.carousel.min.css" media="none" onload="if(media!='all')media='all'">
+<noscript><link rel="stylesheet" href="/media/assets/owl/assets/owl.carousel.min.css"></noscript>
+
+<link rel="stylesheet" href="/media/assets/owl/assets/owl.theme.default.min.css" media="none" onload="if(media!='all')media='all'">
+<noscript><link rel="stylesheet" href="/media/assets/owl/assets/owl.theme.default.min.css"></noscript>
+
+<style>
+    #description iframe {
+        border: none;
+        width: 910px;
+        height: 510px;
+    }
+
+    p > img {
+        margin-top: 15px;
+    }
+</style>
+
+    <script type="text/javascript" src="/media/js/adsbygoogle.js"></script>
+
+    
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>    
+    <![endif]-->
+
+    <!-- Media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+        <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Quick CPU - Анпаркинг ядер процессоры" />
+    <meta property="og:description" content="Прога позволяет сделать анпаркинг ядер процессора и тактовой частоты.Это даст прирост в производительности процессора буквально на ровном месте." />
+    <meta property="og:url" content="https://www.howdyho.net/windows-software/quick-cpu-anparking-yader-processory" />
+    <meta property="og:site_name" content="Клондайк Программиста" />
+
+    <script type="text/javascript" async src="https://relap.io/api/v6/head.js?token=scmx01fTcyfaXGtu"></script>
+</head>
+<body>
+
+    <div id="slideout-open" class="special-ripple" style="visibility: hidden;">
+        <div class="request-loader">
+            <img src="/media/icons/menu.svg">
+            <img src="/media/icons/menu-close.svg">
+        </div>
+    </div>
+    <div id="wrapper">
+        <header id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/"><img src="/media/images/logo.png" alt="Клондайк Программиста"></a>
+                    <div>
+                        <h1><a href="/">Клондайк Программиста</a></h1>
+                        <h2>ПИРАТСКАЯ БУХТА для РАЗРАБОТЧИКОВ</h2>
+                    </div>
+                </div>
+                <nav class="top-menu">
+                    <ul>
+                        <li><a href="/top-100">❤️ ТОП-100</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=3qXm_wi8JpE&list=PLvoBekrlHDgStxongfSMPEOmz5RW1nK-G" target="_blank">👑️ ПОДБОРКИ СОФТА</a></li>
+                        <li><a href="https://www.youtube.com/channel/UC7f5bVxWsm3jlZIPDzOMcAg" target="_blank">НАШ YOUTUBE</a></li>
+                        <li><a href="tg://resolve?domain=devklondike">НАШ TELEGRAM</a></li>
+                    </ul>
+                </nav>
+                <div id="search-form" class="search">
+                    <form action="/search" method="GET">
+                        <input type="text" name="q" placeholder="Что ищем? ... вкладки, chrome, psd" autocomplete="off" required minlength="3" maxlength="30" value="">
+                        <button type="submit">&nbsp;</button>
+                        <small>ENTER</small>
+                    </form>
+                </div>
+                <div id="mobile-search" style="display: none;"><img src="/media/icons/search.svg"></div>
+            </div>
+        </header>
+        
+        <div class="container">
+            <div class="row">
+                <div id="content" class="col-f">
+                    <div class="inner">
+                        
+<article id="material" class="over5k">
+    <div class="details">
+        <div id="material-images" class="owl-carousel" style="background-color: black;">
+                            <div style="background-image: url(/static/uploads/posters/11ldu84ey74g8o0gks.png);">&nbsp;</div>
+                    </div>
+        <div class="inner">
+            <h1 class="title">Quick CPU - Анпаркинг ядер процессоры</h1>
+            <div class="meta">
+                <span class="pubdate">Опубликовано 13.10.2019</span>
+
+                <span class="cat icon"><a href="/category/windows-software/system" class="cat" title="Посмотреть всё в &laquo;Система&raquo;"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzkwQzMwMDsiIHBvaW50cz0iMjQyLjUyNiw0MC40MjEgNTEyLDAgNTEyLDIzOS44MzIgMjQyLjUyNiwyMzkuODMyICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRjg2NzJDOyIgcG9pbnRzPSIwLDc1LjQ1MyAyMDYuNTk2LDQ0LjkxMiAyMDYuNTk2LDI0Mi41MjYgMCwyNDIuNTI2ICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZDNDAwOyIgcG9pbnRzPSIyNDIuNTI2LDQ3MS41NzkgNTEyLDUxMiA1MTIsMjc4LjQ1NiAyNDIuNTI2LDI3OC40NTYgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiMwMEI0RjI7IiBwb2ludHM9IjAsNDM2LjU0NyAyMDYuNTk2LDQ2Ny4wODggMjA2LjU5NiwyNzguNDU2IDAsMjc4LjQ1NiAiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" width="16px" alt="Система"> Система</a></span>
+
+                <span class="downloads icon icon-downloads" title="Популярный файл!"><span class="status over5k">8,336 скачиваний</span></span>
+
+                            </div>
+        </div>
+    </div>
+    <div id="material-actions" class="actions">
+        <ul>
+            <li class="desc"><a href="#description" class="smooth-scroll">Описание</a></li>
+            <li class="dwnl"><a href="javascript://" id="trigger-download">Скачать <small>(2 MB)</small></a></li>
+            <li class="comm"><a href="#comments" class="smooth-scroll">Комментарии</a></li>
+            <li class="rel"><a href="#related" class="smooth-scroll">Похожие материалы</a></li>
+            <!--<li class="rep"><a href="#">Сообщить о проблеме</a></li>-->
+        </ul>
+    </div>
+    <div id="description" class="description">
+                    <p>Программа для распределения и оптимизации нагрузки на ядра процессора.<br />В распределении системных ресурсов не всегда стоит полагаться на систему.</p>
+<p>Ситуация такова, что далеко не все программы верно задействуют использование ядер процессора, что несомненно сказывается на быстродействии ПК.<br />Несмотря на стремительное развитие многоядерности, многие программы не понимают присутствия 2 и более ядер процессора, а значит, не будут их использовать.</p>
+            </div>
+    <div class="download">
+        <header>
+            <h2>Скачать</h2>
+        </header>
+
+                <div id="download">
+        
+            <div class="dwrapper">
+                <div class="d-btn-wrapper" style="text-align: center;">
+                    <button id="download-start" data-mid="493">
+                        <strong>СКАЧАТЬ</strong>
+                                                    <small>Размер файла: 2 MB</small>
+                                            </button>
+                </div>
+
+                                                                                                                                                                    
+                <div id="timer" class="info" style="display: none;"><span>Скачивание автоматически начнётся через</span><div class="progress" id="progress"><span class="progress-value"><span id="progress-value" data-timer="60">60</span><small>сек</small></span></div></div>
+            </div>
+
+                                                                            
+            <div id="anti-adblock" style="display: none;text-align: center;">
+                <br>
+                <img src="/media/images/anti_xss.png">
+            </div>
+
+        </div>
+    </div>
+                                                        <div class="g-ads">
+                        <header>
+                            <h2>Рекламные ссылки</h2>
+                        </header>
+                                    
+        <div>
+            <div class="download-page-ad-1">
+                <!-- Yandex.RTB R-A-426286-2 -->
+<div id="yandex_rtb_R-A-426286-2"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-426286-2",
+                renderTo: "yandex_rtb_R-A-426286-2",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>				
+				<div style="text-align: center;margin-top: 30px;"><script id="p18095_top" src="/media/js/c32.min.js?patch=1"></script></div>
+            </div>
+			
+            <div id="ibl" class="interesting_block_links" style="display: none;">
+                <a href="https://bit.ly/Ukraine_Hosting" target="_blank" class="takru">• Хостинг Ukraine - Качественный хостинг, лучший в соотношении цена/качество</a><br>
+                <a href="https://www.youtube.com/watch?v=uTt4m6FkJQQ" target="_blank" class="takru">• ТОП 70 программ для Windows за всё время!</a><br>
+                <a href="https://www.youtube.com/watch?v=3AC4PSY8SPs&t=1s" target="_blank" class="takru">• Как ускорить интернет до предела?</a><br>
+                <a href="https://www.youtube.com/watch?v=6V2bt-ac8ow" target="_blank" class="takru">• Как ускорить Windows в несколько раз?</a><br>
+            </div>
+
+                        <script>
+                function randomIntFromInterval(min,max)
+                {
+                    return Math.floor(Math.random()*(max-min+1)+min);
+                }
+
+                setTimeout(function() {
+                    var el = document.getElementById('ibl');
+                    el.style.display = 'block';
+                }, randomIntFromInterval(10000, 20000));
+            </script>
+                    </div>
+    </div>
+        <div class="related">
+        <header>
+            <h2>Похожие материалы</h2>
+        </header>
+
+        <div id="related" class="owl-carousel">
+                    <article class="over10k">
+                                <div class="poster"><img id="poster-458" src="/static/uploads/posters/l1je6xebcfkoso0g.jpg" alt="Mz CPU Accelerator - Повышение скорости процессора"></div>
+                <div class="details">
+                    <h1><a href="/windows-software/mz-cpu-accelerator-povyshenie-skorosti-processora">Mz CPU Accelerator - Повышение скорости процессора</a></h1>
+                    <div class="meta">
+                        <span class="pubdate">20.05.2019</span>
+
+                        <span class="cat icon"><a href="/category/windows-software/system" class="cat" title="Посмотреть всё в &laquo;Система&raquo;"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzkwQzMwMDsiIHBvaW50cz0iMjQyLjUyNiw0MC40MjEgNTEyLDAgNTEyLDIzOS44MzIgMjQyLjUyNiwyMzkuODMyICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRjg2NzJDOyIgcG9pbnRzPSIwLDc1LjQ1MyAyMDYuNTk2LDQ0LjkxMiAyMDYuNTk2LDI0Mi41MjYgMCwyNDIuNTI2ICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZDNDAwOyIgcG9pbnRzPSIyNDIuNTI2LDQ3MS41NzkgNTEyLDUxMiA1MTIsMjc4LjQ1NiAyNDIuNTI2LDI3OC40NTYgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiMwMEI0RjI7IiBwb2ludHM9IjAsNDM2LjU0NyAyMDYuNTk2LDQ2Ny4wODggMjA2LjU5NiwyNzguNDU2IDAsMjc4LjQ1NiAiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" width="16px" alt="Система" style="display: inline-block!important;width: 16px!important;"> Система</a></span>
+
+                        <span class="downloads icon icon-downloads" title="Очень популярный файл!"><span class="status over10k">16,741 скачиваний</span></span>
+                    </div>
+                    <blockquote><p>Мелкая прога, которая <em>(возможно!)</em> повысит Вам FPS в играх/программах.<br />По крайней мере хуже не станет.</p></blockquote>
+                    <div class="actions">
+                        <a href="/windows-software/mz-cpu-accelerator-povyshenie-skorosti-processora?download" class="btn btn-green">СКАЧАТЬ <span class="label">1 MB</span></a>
+                                                    <a href="/windows-software/mz-cpu-accelerator-povyshenie-skorosti-processora" class="btn btn-darkblue">ПОДРОБНЕЕ</a>
+                                                                                            </div>
+                </div>
+            </article>
+                    <article class="">
+                                <div class="poster"><img id="poster-505" src="/static/uploads/posters/1xvf5qokik4kw444sg.png" alt="NVIDIA Inspector - Разгон видеокарты и мониторинг"></div>
+                <div class="details">
+                    <h1><a href="/windows-software/nvidia-inspector-razgon-videokarty-i-monitoring">NVIDIA Inspector - Разгон видеокарты и мониторинг</a></h1>
+                    <div class="meta">
+                        <span class="pubdate">17.10.2019</span>
+
+                        <span class="cat icon"><a href="/category/windows-software/system" class="cat" title="Посмотреть всё в &laquo;Система&raquo;"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzkwQzMwMDsiIHBvaW50cz0iMjQyLjUyNiw0MC40MjEgNTEyLDAgNTEyLDIzOS44MzIgMjQyLjUyNiwyMzkuODMyICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRjg2NzJDOyIgcG9pbnRzPSIwLDc1LjQ1MyAyMDYuNTk2LDQ0LjkxMiAyMDYuNTk2LDI0Mi41MjYgMCwyNDIuNTI2ICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZDNDAwOyIgcG9pbnRzPSIyNDIuNTI2LDQ3MS41NzkgNTEyLDUxMiA1MTIsMjc4LjQ1NiAyNDIuNTI2LDI3OC40NTYgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiMwMEI0RjI7IiBwb2ludHM9IjAsNDM2LjU0NyAyMDYuNTk2LDQ2Ny4wODggMjA2LjU5NiwyNzguNDU2IDAsMjc4LjQ1NiAiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" width="16px" alt="Система" style="display: inline-block!important;width: 16px!important;"> Система</a></span>
+
+                        <span class="downloads icon icon-downloads" title=""><span class="status ">101 скачивание</span></span>
+                    </div>
+                    <blockquote><p><strong><span style="color: #8ce471;">NVIDIA</span></strong> Inspector позволяет получить различную инфу о графическом процессоре, в том числе напряжение, температуру, модель и характеристики.<br />Дополнительно встроен простой функционал разгона.</p></blockquote>
+                    <div class="actions">
+                        <a href="/windows-software/nvidia-inspector-razgon-videokarty-i-monitoring?download" class="btn btn-green">СКАЧАТЬ </a>
+                                                    <a href="/windows-software/nvidia-inspector-razgon-videokarty-i-monitoring" class="btn btn-darkblue">ПОДРОБНЕЕ</a>
+                                                                                            </div>
+                </div>
+            </article>
+                    <article class="over10k">
+                                <div class="poster"><img id="poster-470" src="/static/uploads/posters/sdtvwaqbrsgsswo8gg.png" alt="Net Limiter - Топ прога для контроля сетевого трафика"></div>
+                <div class="details">
+                    <h1><a href="/windows-software/net-limiter-top-proga-dlya-kontrolya-setevogo-trafika">Net Limiter - Топ прога для контроля сетевого трафика</a></h1>
+                    <div class="meta">
+                        <span class="pubdate">08.06.2019</span>
+
+                        <span class="cat icon"><a href="/category/windows-software/system" class="cat" title="Посмотреть всё в &laquo;Система&raquo;"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzkwQzMwMDsiIHBvaW50cz0iMjQyLjUyNiw0MC40MjEgNTEyLDAgNTEyLDIzOS44MzIgMjQyLjUyNiwyMzkuODMyICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRjg2NzJDOyIgcG9pbnRzPSIwLDc1LjQ1MyAyMDYuNTk2LDQ0LjkxMiAyMDYuNTk2LDI0Mi41MjYgMCwyNDIuNTI2ICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZDNDAwOyIgcG9pbnRzPSIyNDIuNTI2LDQ3MS41NzkgNTEyLDUxMiA1MTIsMjc4LjQ1NiAyNDIuNTI2LDI3OC40NTYgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiMwMEI0RjI7IiBwb2ludHM9IjAsNDM2LjU0NyAyMDYuNTk2LDQ2Ny4wODggMjA2LjU5NiwyNzguNDU2IDAsMjc4LjQ1NiAiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" width="16px" alt="Система" style="display: inline-block!important;width: 16px!important;"> Система</a></span>
+
+                        <span class="downloads icon icon-downloads" title="Очень популярный файл!"><span class="status over10k">29,303 скачиваний</span></span>
+                    </div>
+                    <blockquote><p>NetLimiter после установки и запуска следит за деятельностью каждого приложения, использующего доступ к Интернету, а также активно управляет трафиком, контролируя скорость потока данных. Вы можете самостоятельно настроить скорость загрузки и отправки информации для каждого отдельного приложения или соединения.</p></blockquote>
+                    <div class="actions">
+                        <a href="/windows-software/net-limiter-top-proga-dlya-kontrolya-setevogo-trafika?download" class="btn btn-green">СКАЧАТЬ <span class="label">7 MB</span></a>
+                                                    <a href="/windows-software/net-limiter-top-proga-dlya-kontrolya-setevogo-trafika" class="btn btn-darkblue">ПОДРОБНЕЕ</a>
+                                                                                            </div>
+                </div>
+            </article>
+                </div>
+    </div>
+            <div id="comments" class="comments">
+        <header>
+            <h2>Комментарии</h2>
+        </header>
+
+        <div id="vk_comments"></div>
+    </div>
+    </article>
+
+                    </div>
+                </div>
+                <aside id="sidebar" class="col-s">
+                    <div class="inner">
+                       <div class="statistics">
+                           <div class="online hint--bottom" aria-label="Текущий онлайн на проекте">
+                               <div class="pulse"><div class="wave"></div></div>
+                               <div class="info">
+                                   <span class="num">572</span>
+                                   <small>онлайн</small>
+                               </div>
+                           </div>
+                           <div class="files hint--bottom" aria-label="Общее количество опубликованных материалов">
+                               <div class="pulse"><div class="wave"></div></div>
+                               <div class="info">
+                                   <span class="num">436</span>
+                                   <small>файлов</small>
+                               </div>
+                           </div>
+                           <div class="downloads hint--bottom" aria-label="Общее количество скачиваний по всему проекту">
+                               <div class="pulse"><div class="wave"></div></div>
+                               <div class="info">
+                                   <span class="num">3,100,722</span>
+                                   <small>скачиваний</small>
+                               </div>
+                           </div>
+                       </div>
+                        <section id="side-menu" class="side-menu">
+                            <header>
+                                <h1>КАТЕГОРИИ</h1>
+                            </header>
+                            <nav>
+                                <ul>
+                                                                        <li class="with-dropdown ">
+                                        <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/fire.svg);"><span class="icon-bg" style="background-image: url(/media/icons/fire.svg);"></span></span><span style="color: #8ac547;">Кибер</span>безопасность</a>
+
+                                        <ul class="dropdown" >
+                                            <li ><a href="/category/cybersecurity/software">Софт<small>дебаг/анализ</small></a></li>
+                                            <li ><a href="/category/cybersecurity/databases">Базы данных <small>подборки</small></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="with-dropdown ">
+                                        <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/windows-colored.svg);"><span class="icon-bg" style="background-image: url(/media/icons/windows-colored.svg);"></span></span>Софт для Windows</a>
+
+                                        <ul class="dropdown" >
+                                            <li ><a href="/category/windows-software/appearance">Внешний вид<small>рабочий стол/украшения</small></a></li>
+                                            <li ><a href="/category/windows-software/media">Медиа<small>аудио/видео/фото</small></a></li>
+                                            <li class="active"><a href="/category/windows-software/system">Система<small>Ускорители/оптимизаторы</small></a></li>
+                                            <li ><a href="/category/windows-software/security">Безопасность<small>антивирусы/сканеры</small></a></li>
+                                            <li ><a href="/category/windows-software/for-developer">Для программиста <small>редакторы/эмуляторы</small></a></li>
+                                            <li ><a href="/category/windows-software/game-development">Создание игр<small>движки/конструкторы</small></a></li>
+                                            <li ><a href="/category/windows-software/other">Разное<small>все остальное</small></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="with-dropdown ">
+                                        <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/html-5.svg);"><span class="icon-bg" style="background-image: url(/media/icons/html-5.svg);"></span></span>Разработчику</a>
+
+                                        <ul class="dropdown" >
+                                            <li ><a href="/category/freebies/html-templates">HTML/CSS<small>шаблоны</small></a></li>
+                                            <li ><a href="/category/freebies/php-scripts">PHP/MySql<small>скрипты</small></a></li>
+                                            <li ><a href="/category/freebies/javascript">JavaScript<small>скрипты/эффекты</small></a></li>
+                                            <li ><a href="/category/freebies/psd-templates">PSD макеты<small>для тренировки</small></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="with-dropdown ">
+                                        <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/photoshop-express.svg);"><span class="icon-bg" style="background-image: url(/media/icons/photoshop-express.svg);"></span></span>Дизайн</a>
+
+                                        <ul class="dropdown" >
+                                            <li  ><a href="/category/design/images">Изображения<small>паки</small></a></li>
+                                            <li  ><a href="/category/design/icons">Иконки<small>подборки</small></a></li>
+                                            <li  ><a href="/category/design/fonts">Шрифты<small>лучшие</small></a></li>
+                                            <li  ><a href="/category/design/mockups">Мокапы<small>для Photoshop</small></a></li>
+                                            <li  ><a href="/category/design/gfx">GFX<small>для Photoshop</small></a></li>
+                                        </ul>
+                                    </li>
+                                    <!--<li class="with-dropdown">
+                                        <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/books.svg);"><span class="icon-bg" style="background-image: url(/media/icons/books.svg);"></span></span>Книги</a>
+
+                                        <ul class="dropdown">
+                                            <li><a href="/category/books/programming">Программисту<small>учебники</small></a></li>
+                                            <li><a href="/category/books/cybersecurity">Хакеру<small>литература</small></a></li>
+                                            <li><a href="/category/books/other">Разные книги<small>все остальное</small></a></li>
+                                        </ul>
+                                    </li>-->
+                                    <li ><a href="/category/other" class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/package.svg);"><span class="icon-bg" style="background-image: url(/media/icons/package.svg);"></span></span>Другое</a></li>
+                                </ul>
+                            </nav>
+                        </section>
+                        <section class="hollow">
+                            <header>
+                                <h1>ОНЛАЙН ЧАТ</h1>
+                            </header>
+                            <div id="chatbro" class="is-loading"><div class="chatbro-loader"></div></div>
+                        </section>
+                        <section class="default">
+                            <header>
+                                <h1>РЕКЛАМА</h1>
+                            </header>
+                            <div>
+                                <!-- Yandex.RTB R-A-426286-1 -->
+<div id="yandex_rtb_R-A-426286-1"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-426286-1",
+                renderTo: "yandex_rtb_R-A-426286-1",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>                            </div>
+                        </section>
+                                                <section class="default">
+                            <header>
+                                <h1>МЫ ВКОНТАКТЕ</h1>
+                            </header>
+                            <div>
+                                <!-- VK Community Widget -->
+                                <div id="vk_groups"></div>
+                            </div>
+                        </section>
+                                                <section class="default">
+                            <div>
+                                <!-- Orphus -->
+                                <script type="text/javascript" src="/media/js/orphus.js?patch=1"></script><a href="//orphus.ru" id="orphus" target="_blank"><img alt="Система Orphus" src="/media/js/orphus.png?patch=1" border="0" style="max-width: 100%;" /></a>
+                            </div>
+                        </section>
+                                            </div>
+                </aside>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-f">
+                            <div class="logo">
+                                <a id="activate-ka" class="hint--top" aria-label="Сыграем?) 😎"><img src="/media/images/logo.png" alt="Клондайк Программиста" style="max-width: 100%;"></a>
+                                <div>
+                                    <h1><a href="/">Клондайк Программиста</a></h1>
+                                    <h2>ПИРАТСКАЯ БУХТА для РАЗРАБОТЧИКОВ</h2>
+                                </div>
+                            </div>
+                            <p class="cowners-text">Проект «Клондайк Программиста» создан с целью коллекционирования наиболее интересных материалов из различных сфер деятельности.<br>Мы не преследуем цель незаконного распространения материалов, поэтому если Вы являетесь правообладателем, сообщите нам о нарушении по указанным здесь контактам.</p>
+                        </div>
+                    </div>
+
+                    <!-- Special Sticky Section -->
+                    <section class="special">
+                        <div class="special-top-tip">Получайте <a href="tg://resolve?domain=devklondike">уведомления</a> о новых материалах на свои компьютеры и телефоны, чтобы не пропустить ничего интересного.</div>
+                        <div class="special-ripple">
+                            <a href="tg://resolve?domain=devklondike" class="request-loader">
+                              <div><img src="/media/icons/telegram.svg"></div>
+                            </a>
+                        </div>
+                        <div class="special-bottom-tip"><small>TELEGRAM канал</small><br><a href="tg://resolve?domain=devklondike">๖ۣۜКлондайк программиста</a></div>
+                        <div class="special-copyright">v0.4 codename <span>«Evolution»</small></span>
+                    </section>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <p>© 2019.  Автор проекта: <span>Абрахам Тугалов</span> <small><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f8888a91949d8ac1ceb89f95999194d69b9795">[email&#160;protected]</a></small></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="slideout-preserved">
+        <aside id="sidebar-mobile" style="display: none;">
+            <div class="inner">
+               <div class="statistics">
+                   <div class="online">
+                       <div class="pulse"><div class="wave"></div></div>
+                       <div class="info">
+                           <span class="num">572</span>
+                           <small>онлайн</small>
+                       </div>
+                   </div>
+                   <div class="files">
+                       <div class="pulse"><div class="wave"></div></div>
+                       <div class="info">
+                           <span class="num">436</span>
+                           <small>файлов</small>
+                       </div>
+                   </div>
+                   <div class="downloads">
+                       <div class="pulse"><div class="wave"></div></div>
+                       <div class="info">
+                           <span class="num">3,100,722</span>
+                           <small>скачиваний</small>
+                       </div>
+                   </div>
+               </div>
+                <section id="side-menu" class="side-menu">
+                    <header>
+                        <h1>КАТЕГОРИИ</h1>
+                    </header>
+                    <nav>
+                        <ul>
+                            <li class="with-dropdown">
+                                <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/fire.svg);"><span class="icon-bg" style="background-image: url(/media/icons/fire.svg);"></span></span><span style="color: #8ac547;">Кибер</span>безопасность</a>
+
+                                <ul class="dropdown">
+                                    <li><a href="/category/cybersecurity/software">Софт<small>взлом/обходы</small></a></li>
+                                    <li><a href="/category/cybersecurity/databases">Базы данных <small>брут/спам/флуд</small></a></li>
+                                </ul>
+                            </li>
+                            <li class="with-dropdown">
+                                <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/windows-colored.svg);"><span class="icon-bg" style="background-image: url(/media/icons/windows-colored.svg);"></span></span>Софт для Windows</a>
+
+                                <ul class="dropdown">
+                                    <li><a href="/category/windows-software/appearance">Внешний вид<small>рабочий стол/украшения</small></a></li>
+                                    <li><a href="/category/windows-software/media">Медиа<small>аудио/видео/фото</small></a></li>
+                                    <li><a href="/category/windows-software/system">Система<small>Ускорители/оптимизаторы</small></a></li>
+                                    <li><a href="/category/windows-software/security">Безопасность<small>антивирусы/сканеры</small></a></li>
+                                    <li><a href="/category/windows-software/for-developer">Для программиста <small>редакторы/эмуляторы</small></a></li>
+                                    <li><a href="/category/windows-software/game-development">Создание игр<small>движки/конструкторы</small></a></li>
+                                    <li><a href="/category/windows-software/other">Разное<small>все остальное</small></a></li>
+                                </ul>
+                            </li>
+                            <li class="with-dropdown">
+                                <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/html-5.svg);"><span class="icon-bg" style="background-image: url(/media/icons/html-5.svg);"></span></span>Разработчику</a>
+
+                                <ul class="dropdown">
+                                    <li><a href="/category/freebies/html-templates">HTML/CSS<small>шаблоны</small></a></li>
+                                    <li><a href="/category/freebies/php-scripts">PHP/MySql<small>скрипты</small></a></li>
+                                    <li><a href="/category/freebies/javascript">JavaScript<small>скрипты/эффекты</small></a></li>
+                                    <li><a href="/category/freebies/psd-templates">PSD макеты<small>для тренировки</small></a></li>
+                                </ul>
+                            </li>
+                            <li class="with-dropdown">
+                                <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/photoshop-express.svg);"><span class="icon-bg" style="background-image: url(/media/icons/photoshop-express.svg);"></span></span>Дизайн</a>
+
+                                <ul class="dropdown">
+                                    <li><a href="/category/design/images">Изображения<small>паки</small></a></li>
+                                    <li><a href="/category/design/icons">Иконки<small>подборки</small></a></li>
+                                    <li><a href="/category/design/fonts">Шрифты<small>лучшие</small></a></li>
+                                    <li><a href="/category/design/mockups">Мокапы<small>для Photoshop</small></a></li>
+                                    <li><a href="/category/design/gfx">GFX<small>для Photoshop</small></a></li>
+                                </ul>
+                            </li>
+                            <li class="with-dropdown">
+                                <a class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/books.svg);"><span class="icon-bg" style="background-image: url(/media/icons/books.svg);"></span></span>Книги</a>
+
+                                <ul class="dropdown">
+                                    <li><a href="/category/books/programming">Программисту<small>учебники</small></a></li>
+                                    <li><a href="/category/books/cybersecurity">Хакеру<small>литература</small></a></li>
+                                    <li><a href="/category/books/other">Разные книги<small>все остальное</small></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/category/other/" class="with-icon"><span class="icon-fg" style="background-image: url(/media/icons/package.svg);"><span class="icon-bg" style="background-image: url(/media/icons/package.svg);"></span></span>Другое</a></li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <section>
+                    <header>
+                        <h1>ПОИСК</h1>
+                        <div>
+                            <div class="search">
+                                <form action="/search" method="GET">
+                                    <input type="text" name="q" placeholder="Что ищем? ... вкладки, chrome, psd" autocomplete="off" required minlength="3" maxlength="30" value="">
+                                    <button type="submit">&nbsp;</button>
+                                </form>
+                            </div>
+                        </div>
+                    </header>
+                </section>
+
+                <!-- Special Sticky Section -->
+                <section class="special">
+                    <div class="special-top-tip">Получайте <a href="tg://resolve?domain=devklondike">уведомления</a> о новых материалах на свои компьютеры и телефоны, чтобы не пропустить ничего интересного.</div>
+                    <div class="special-ripple">
+                        <a href="tg://resolve?domain=devklondike" class="request-loader">
+                          <div><img src="/media/icons/telegram.svg"></div>
+                        </a>
+                    </div>
+                    <div class="special-bottom-tip"><small>TELEGRAM канал</small><br><a href="tg://resolve?domain=devklondike">๖ۣۜКлондайк программиста</a></div>
+                    <div class="special-copyright">v0.4 codename <span>«Evolution»</small></span>
+                </section>
+            </div>
+        </aside>
+    </div>
+
+    <!-- JavaScript at the end -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+    <script type="text/javascript" src="/media/js/main-pn1.js" defer></script>
+<script type="text/javascript" src="/media/js/main-pn3.js" defer></script>
+<script type="text/javascript" src="/media/assets/visibility-polyfill/visibly.js" defer></script>
+<script type="text/javascript" src="/media/js/main-pn4.js" defer></script>
+<script type="text/javascript" src="/media/js/main-pn2.js?patch=1" defer></script>
+
+    
+    <script id="chatBroEmbedCode">
+    /* Chatbro Widget Embed Code Start */
+    function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','//www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}
+    /* Chatbro Widget Embed Code End */
+    setTimeout(function() {ChatbroLoader({encodedChatId: '7WLA'});}, 1000);
+    </script>
+
+        <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+    <script type="text/javascript">
+    VK.Widgets.Group("vk_groups", {mode: 4, width: "291", height: "500", color1: '080C0F', color2: 'F0F0F0', color3: '8AC547'}, 84392011);
+            VK.init({apiId: 7053609, onlyWidgets: true});
+        VK.Widgets.Comments("vk_comments", {
+            limit: 10,
+            attach: "*",
+            pageUrl: '/windows-software/quick-cpu-anparking-yader-processory'
+        },
+        493);
+        </script>
+    
+    <div id="ka-info" class="KICKASSELEMENT">
+        <div class="KICKASSELEMENT">
+            <p class="KICKASSELEMENT"><kbd class="KICKASSELEMENT">SPACE</kbd> - стрелять</p>
+            <p class="KICKASSELEMENT"><kbd class="KICKASSELEMENT">▲▼◄►</kbd> - лететь</p>
+            <p class="KICKASSELEMENT"><kbd class="KICKASSELEMENT">F</kbd> - спец. выстрел<small class="KICKASSELEMENT"> (когда готово)</small></p>
+        </div>
+        <div class="KICKASSELEMENT">
+            <p class="KICKASSELEMENT">ОЧКОВ: <span id="ka-score" class="KICKASSELEMENT">0</span></p>
+            <small class="KICKASSELEMENT">Я смог набрать 30 тысяч, а ты? ;)</small>
+        </div>
+    </div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter46284132 = new Ya.Metrika({
+                    id:46284132,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/46284132" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
