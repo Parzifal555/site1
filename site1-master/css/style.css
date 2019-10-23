@@ -1,16 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .logo{
-    margin-left: 160px;
+  
 }
 .menu{
-    margin-left: 1070px;
-   margin-top: -80px;
+
 }
 .name{
-    margin-left: 800px;
+
     
 
 }
 .text1{
-    margin-top: 284px;
-    margin-right: 371px;
+
+}
+.botton{
+
+}
+.container{
+    width: 940px;
+    margin: 0 auto;
+}
+
+header{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url(/site1-master/img/header\ bg.png);
+}
+.about{
+    margin-top: 0 ;
+    height: 100%;
+    height: 100vh;
+    background-image: url(/site1-master/img/background.png);
+    padding-top: 100px;
+}
+.border-txt{
+    padding: 17px;
+    border-left: 7px blue solid;
+}
+.portfolio{
+    margin-top: 0 ;
+    height: 100%;
+    padding-top: 100px;
+    height: 100vh;
+    background-image: url(/site1-master/img/bg_partfolio.png);
+}
+.botton-portfolio{
+
+}
+.donate{
+    background-image: url(/site1-master/img/bg_content.png);
+    margin-top: 0 ;
+    height: 100%;
+    padding-top: 100px;
+    height: 325px;
+}
+.contact{
+    margin-top: 0 ;
+    height: 100%;
+    padding-top: 100px;
+    height: 100vh;
+    background-image: url(/site1-master/img/bg_contact.png);
+}
+.email{
+    border-radius: 5px;
+    
 }
